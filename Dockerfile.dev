@@ -1,0 +1,18 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm","run","start"]
+
+# creo img => docker build -f Dockerfile.dev .
+# ejecuto img => docker run -it -p 3000:3000 IMAGE_ID
+# ejecuto con volumen entre directorio local y container => docker run -v /app/node_modules -v $(pwd):/app  -p 3000:3000 IMAGE_ID
+## -v $(pwd):/app       => obtenga el  directorio de trabajo actual local y tome todo lo que esta dentro de ella y la mapeamos dentro de la carpeta del contenedor
+## -v /app/node_modules => enumeramos una carpeta dentro del contendor para que sea un marcador de posición para la carpeta que está dentro del contenedor
+    ### y no intente mapearlo contra nada
