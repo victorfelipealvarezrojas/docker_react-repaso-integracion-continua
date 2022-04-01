@@ -13,7 +13,7 @@ deploy:
   region: "us-east-1"
   app: "dockerrepaso"
   env: "Dockerrepaso-env"
-  bucket_name: "elasticbeanstalk-us-east-1-223488973913"
+  bucket_name: "bktpruebasss"
   bucket_path: "dockerrepaso"
   on:
     branch: master
